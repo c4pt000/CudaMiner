@@ -1,4 +1,37 @@
+```
+on the host before running this docker image enable docker-nvidia
 
+wget -O /etc/yum.repos.d/inttf.repo https://rpms.if-not-true-then-false.com/inttf.repo
+dnf install nvidia-docker2
+
+
+
+replace /etc/nvidia-container-runtime/config.toml
+
+
+echo " 
+disable-require = false
+#swarm-resource = DOCKER_RESOURCE_GPU
+#accept-nvidia-visible-devices-envvar-when-unprivileged = true
+#accept-nvidia-visible-devices-as-volume-mounts = false
+[nvidia-container-cli]
+#root = /run/nvidia/driver
+#path = /usr/bin/nvidia-container-cli
+environment = []
+#debug = /var/log/nvidia-container-toolkit.log
+#ldcache = /etc/ld.so.cache
+load-kmods = true
+no-cgroups = true
+#user = root:video
+ldconfig = @/sbin/ldconfig
+[nvidia-container-runtime]
+debug = /var/log/nvidia-container-runtime.log 
+" >  /etc/nvidia-container-runtime/config.toml 
+
+
+
+systemctl restart docker
+```
 IMPORTANT PUBLIC SERVICE ANNOUNCEMENT:
 
 This has recently been ugpraded to use the CUDA 5.5 toolkit.
