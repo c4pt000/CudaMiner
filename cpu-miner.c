@@ -1716,9 +1716,8 @@ int main(int argc, char *argv[])
 	printf("\t             This is version "PROGRAM_VERSION" (beta)\n");
 	printf("\tbased on pooler-cpuminer 2.3.2 (c) 2010 Jeff Garzik, 2012 pooler\n");
 	printf("\t    Cuda additions Copyright 2013,2014 Christian Buchner\n");
-	printf("\t  LTC donation address: LKS1WDKGED647msBQfLBHV3Ls8sveGncnm\n");
-	printf("\t  BTC donation address: 16hJF5mceSojnTD3ZTUDqdRhDyPJzoRakM\n");
-	printf("\t  YAC donation address: Y87sptDEcpLkLeAuex6qZioDbvy1qXZEj4\n");
+	
+	printf("RADC donation address: RBARRP64VQhMpozPaNFXRSzCgn9FtvDuFM (c4pt000)\n\n");
 
 	for(int thr_id = 0; thr_id < MAX_DEVICES; thr_id++)
     {
